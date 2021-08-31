@@ -5,7 +5,7 @@
 Make a call to the following endpoint:
 
 ```
-https://t9jt3myad3.execute-api.eu-west-2.amazonaws.com/api/breakingbad/6
+https://breakingbadapi.com/api/characters/6
 ```
 
 Display the name, image and status of the character returned.
