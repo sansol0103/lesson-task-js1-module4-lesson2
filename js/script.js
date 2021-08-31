@@ -1,4 +1,4 @@
-const url = "https://t9jt3myad3.execute-api.eu-west-2.amazonaws.com/api/breakingbad/6";
+const url = "https://breakingbadapi.com/api/characters/6";
 
 const detailContainer = document.querySelector(".details");
 
@@ -6,7 +6,9 @@ const detailContainer = document.querySelector(".details");
 async function fetchCharacter() {
     try {
         const response = await fetch(url);
-        const details = await response.json();
+        const result = await response.json();
+        // the endpoint is an array with one result, so we need to access the first item in the array
+        const details = result[0];
         // pass the details to the function that will create the HTML
         createHtml(details);
     } catch (error) {
