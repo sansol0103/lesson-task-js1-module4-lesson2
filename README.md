@@ -5,7 +5,7 @@
 Make a call to the following endpoint:
 
 ```
-https://breakingbadapi.com/api/characters/6
+https://api.noroff.dev/api/v1/old-games/2
 ```
 
-Display the name, image and status of the character returned.
+Display the name, description and image of the game returned.

@@ -1,27 +1,26 @@
-const url = "https://breakingbadapi.com/api/characters/6";
+const url = 'https://api.noroff.dev/api/v1/old-games/2';
 
-const detailContainer = document.querySelector(".details");
+const detailContainer = document.querySelector('.details');
 
-// we need an async function as we are using await
+// We need an async function as we are using async await
 async function fetchCharacter() {
-    try {
-        const response = await fetch(url);
-        const result = await response.json();
-        // the endpoint is an array with one result, so we need to access the first item in the array
-        const details = result[0];
-        // pass the details to the function that will create the HTML
-        createHtml(details);
-    } catch (error) {
-        console.log(error);
-        detailContainer.innerHTML = error;
-    }
+  try {
+    const response = await fetch(url);
+    const result = await response.json();
+    const details = result;
+    // Pass the details to the function that will create the HTML
+    createHtml(details);
+  } catch (error) {
+    console.log(error);
+    detailContainer.innerHTML = error;
+  }
 }
 
 // call the function
 fetchCharacter();
 
 function createHtml(details) {
-    detailContainer.innerHTML = `<h1 class="name">${details.name}</h1>
-                                <div class="image" style="background-image: url('${details.img}')"></div>
-                                <div class="status">Status: <b>${details.status}</b></div>`;
+  detailContainer.innerHTML = `<h1 class="name">${details.name}</h1>
+  <div class="status">${details.description}</div>
+  <div class="image" style="background-image: url('${details.image}')"></div>`;
 }
